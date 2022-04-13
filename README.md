@@ -23,3 +23,15 @@ Things you may want to cover:
 
 * ...
 # tu
+
+# для создания контроллера через терминал
+rails generate или rails g для просмотра всех генераций
+
+rails g controller welcome index # создаст контроллер с именем Welcome и методом index
+
+# для создания скелета некого функционала воспользуемся скафолдингом
+
+scaffold
+пердадим название и поле с типом стринг
+
+rails g scaffod railway_station title:string
