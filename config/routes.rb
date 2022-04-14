@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :railway_stations
+
   get 'welcome/index' # т.е. он теперь умеет отвечать на такой запрос
 
   root "welcome#index" # страница по умолчанию

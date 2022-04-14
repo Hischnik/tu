@@ -1,27 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # tu
 
 # для создания контроллера через терминал
@@ -35,3 +13,34 @@ scaffold
 пердадим название и поле с типом стринг
 
 rails g scaffod railway_station title:string
+
+rake db:migrate # миграция таблицы бд в папке db/migrate
+
+# для просмотра маршрутов можно через сайт <>/rails/info/routes
+* через терминал - rails routes
+
+# можно запустить консоль rails в терминале - находясь в папке с проектом "rails c" ну и взаимодействовать с базой и тп
+* посмотреть все записи в таблице ИмяКласса.all - будет массив с экземплярами
+* создать через ИмяКласса.create(Имя или что-то еще) - сразу создаст запрос на добавление в БД
+  создать через ИмяКласса.new(Имя или что-то еще) - инициализирует, но не создаст в БД
+  для отправки в БД использовать .save или присвоить это в переменную и снова a.save d в переменной можно проверять сохранена ли она:
+    - a.created_at?(Создана ли она) или a.new_record?(Новая ли запись)
+
+# например для вывода имен станций:
+  RailwayStation.all.each do |a|
+    puts a.title
+  end
+
+# для поиска по id в таблице:
+  RailwayStation.find(id)
+
+# для изменения воспользуемся update (для конкретного объекта)
+  RailwayStation.find(id).update(title: "Новое имя")
+
+# для удаление записи - destroy по аналогии с update, только ни чего не передаем
+
+# Валидация т.е. проврка входных данных
+* проводится в модели validates <что проверяем>, <на что проверяем>
+    validates :title , presence :true # т.е. проверяем название на наличие данных это не nil и не ""
+
+11_lesson - 1:06
