@@ -4,10 +4,9 @@
 
 <div id="railway_stations">
   <% @railway_stations.each do |railway_station| %>
-    <%= render railway_station %>
-    <%#= link_to "Показать", railway_station %>
-    <%#= link_to railway_station.title , railway_station %>
-    <%# <p> --------------------------------------- </p> %>
+    <ul>
+      <li><%= render railway_station %></li>
+    </ul>
   <% end %>
 </div>
 

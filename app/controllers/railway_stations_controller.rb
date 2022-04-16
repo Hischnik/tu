@@ -12,31 +12,27 @@ class RailwayStationsController < ApplicationController
     @railway_station = RailwayStation.new
   end
 
-  def edit
-  end
-
   def create
     @railway_station = RailwayStation.new(railway_station_params)
 
     respond_to do |format|
       if @railway_station.save
         format.html { redirect_to railway_station_url(@railway_station), notice: "Станция успешно создана." }
-        format.json { render :show, status: :created, location: @railway_station }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @railway_station.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def edit
   end
 
   def update
     respond_to do |format|
       if @railway_station.update(railway_station_params)
         format.html { redirect_to railway_station_url(@railway_station), notice: "Станция успешно изменена." }
-        format.json { render :show, status: :ok, location: @railway_station }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @railway_station.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,11 +42,11 @@ class RailwayStationsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to railway_stations_url, notice: "Станция успешно удалена." }
-      format.json { head :no_content }
     end
   end
 
   private
+
     def set_railway_station
       @railway_station = RailwayStation.find(params[:id])
     end

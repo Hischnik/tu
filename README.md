@@ -43,4 +43,16 @@ rake db:migrate # миграция таблицы бд в папке db/migrate
 * проводится в модели validates <что проверяем>, <на что проверяем>
     validates :title , presence :true # т.е. проверяем название на наличие данных это не nil и не ""
 
-11_lesson - 1:06
+# 11_lesson - 1:06
+1. создание миграции через терминал ("CreateTrains")
+  - rails g migration <Название таблицы> можно указать имя колонки:тип или создать это потом вручную.
+  - не забыть потом про миграцию rake/rails db:migrate (для отката :rollback)
+
+2. создание модели ("train.rb class Train")
+
+3. объявляем новый ресурс в routs
+
+4. создаем контроллер trains_controller.rb и class TrainsController < ApplicationController
+  - создаем экшены (7 штук)
+
+5. создаем шаблон(вьюха) у них своя папка trains и там *.html.erb файлы

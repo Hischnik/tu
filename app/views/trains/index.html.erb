@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Список поездов</h1>
+
+<div id="trains">
+  <% @trains.each do |train| %>
+    <ul>
+      <li><%= render train %></li>
+    </ul>
+  <% end %>
+</div>
+
+  <p>_________________________</p>
+
+  <%= link_to "Создать новый поезд", new_train_path %>
+
+  <br>
+
+  <%= link_to "На главную", welcome_index_path %>

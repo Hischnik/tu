@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @train %>
+
+<div>
+  <%= link_to "Изменить", edit_train_path(@train) %> |
+  <%= link_to "Список поездов", trains_path %>
+
+  <%= button_to "Удалить", @train, method: :delete %>
+</div>
